@@ -1,0 +1,47 @@
+<div class="login-page">
+  <mat-card class="mat-elevation-z12">
+    <mat-card-title style="text-align:center;">BROADCAST</mat-card-title>
+     
+          <mat-card-content>
+            <form [formGroup]="frm_brodcastmsg">
+                    <mat-form-field>
+                                <input
+                                matInput
+                                placeholder="ENTER THE MESSAGE"
+                                required
+                                name="body"formControlName="body"
+                                    >
+
+                    </mat-form-field>
+                    <mat-form-field>
+                                        <input
+                                        formControlName="title"
+                                        matInput
+                                        placeholder="SUPPLY THE TITLE"
+                                        name="title"
+                                        >
+                        </mat-form-field>
+                        <mat-form-field>
+                                        <input
+                                        formControlName="ThePatientId"
+                                        matInput
+                                        placeholder="SUPPLY THE PATIENT ID"
+                                         name="ThePatientId"
+                                        >
+                                        <mat-icon matSuffix>lock</mat-icon>
+                        </mat-form-field>
+
+              <button [disabled]="frm_brodcastmsg.invalid"
+                mat-raised-button
+                color="primary"
+                class="login-button"
+                 (click)="SendMessage()" >
+                Messenger - Prototype API
+              </button>
+
+            </form>
+          </mat-card-content>
+    
+  </mat-card>
+</div>
+

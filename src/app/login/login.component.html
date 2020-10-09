@@ -1,0 +1,51 @@
+<div class="login-page">
+  <mat-card class="mat-elevation-z12">
+    <mat-card-title style="text-align:center;">LOGIN</mat-card-title>
+     
+          <mat-card-content>
+            <form [formGroup]="frm_login">
+              <mat-form-field>
+                <input
+                  matInput
+                  placeholder="Supply Key"
+                  required
+                  name="UserKey"formControlName="UserKey"
+                 >
+                  <mat-error *ngIf=  "frm_login.get('UserKey').invalid"  >User Key is required</mat-error> 
+              
+              </mat-form-field>
+              <mat-form-field>
+                <input
+                 formControlName="Password"
+                  matInput
+                  placeholder="Password"
+                  type="Password"
+                  required
+                  minlength="3"
+                  name="Password"
+                >
+                   <mat-error
+                    *ngIf="frm_login.get('Password').invalid" >
+                    Password is required
+                  </mat-error>
+                  <!-- <mat-error
+                    *ngIf="frm_login.get('Password').errors && frm_login.get('Surname').errors.minlength">
+                    Surname must be of length 3 or above
+                  </mat-error>  -->
+                <mat-icon matSuffix>lock</mat-icon>
+              </mat-form-field>
+             
+              <button [disabled]="frm_login.invalid"
+                mat-raised-button
+                color="primary"
+                class="login-button"
+                 (click)="SignIn()" >
+                Sign In
+              </button>
+
+            </form>
+          </mat-card-content>
+    
+  </mat-card>
+</div>
+

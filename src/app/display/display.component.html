@@ -1,0 +1,13 @@
+<div *ngIf='show'>
+        <mat-chip-list class="mat-chip-list-stacked" aria-label="Color selection">
+            <mat-chip *ngFor="let chip of show ; let i = index" 
+                selected [color]="chip.color" 
+                [selectable]="selectable"   
+                [removable]="removable" 
+                (removed)="remove(index)">
+                {{chip.body}}
+                <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+            </mat-chip>
+        </mat-chip-list>
+
+ </div>
